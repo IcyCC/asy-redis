@@ -1,4 +1,4 @@
-# A async redis driver .just for play
+# A async redis driver just for playing
 
 ## current only suport key-value operation
 
@@ -7,7 +7,7 @@
 ## how to start
 
 
-```
+```python
 from asy_redis.client import Client
 import asyncio
 
