@@ -10,9 +10,9 @@ class CmdLine(object):
 
     def __repr__(self):
         if self.value is None:
-            return "{} {}".format(self.cmd, self.key)
+            return "{} {} \r\n ".format(self.cmd, self.key)
         else:
-            return "{} {} {}".format(self.cmd, self.key, self.value)
+            return "{} {} {} \r\n ".format(self.cmd, self.key, self.value)
 
 
 class Client(object):
@@ -29,9 +29,9 @@ class Client(object):
         if not self.connection.is_connected():
             await self.connection.connect()
 
-    async def disconnet(self):
+    def disconnet(self):
         if self.connection.is_connected():
-            await self.connection.disconnect()
+            self.connection.disconnect()
 
     def format_command(self, *tokens, **kwargs):
         cmds = []
